@@ -2,7 +2,7 @@ import { useReducer, useState } from "react"
 
 import styles from "./index.module.css"
 
-const Home = () => {
+const Tasks = () => {
       const initialTasks = [""]
 
     const taskReducer = (state, action) => {
@@ -41,7 +41,7 @@ const Home = () => {
 
   return (
     <div className={styles.container}>
-        <h2 className={styles.title}>Tarefas</h2>
+        <h2>Tarefas</h2>
         {tasks.map((task) => (
             <li key={task.id} onDoubleClick={() => removeTask(task.id)}>{task.text}</li>
         ))}
@@ -57,4 +57,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Tasks

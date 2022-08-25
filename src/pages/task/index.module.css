@@ -1,0 +1,33 @@
+
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px 0 20px;
+}
+
+
+.title {
+    padding: 50px;
+    text-align: right;
+}
+
+.input__task{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    bottom: 55px;
+}
+
+.btn__input{
+    background-color: #50E3A4;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;   
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    align-items: center;
+}
