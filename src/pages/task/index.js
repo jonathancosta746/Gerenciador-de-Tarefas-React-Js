@@ -1,6 +1,12 @@
 import { useReducer, useState } from "react"
 
+
+//css
 import styles from "./index.module.css"
+
+//Material Design
+import AddSharpIcon from '@mui/icons-material/AddSharp';
+import ClearSharpIcon from '@mui/icons-material/ClearSharp';
 
 const Tasks = () => {
       const initialTasks = [""]
@@ -41,16 +47,38 @@ const Tasks = () => {
 
   return (
     <div className={styles.container}>
-        <h2>Tarefas</h2>
         {tasks.map((task) => (
-            <li key={task.id} onDoubleClick={() => removeTask(task.id)}>{task.text}</li>
+            <li 
+                key={task.id} 
+                onDoubleClick={() => removeTask(task.id)}
+            >
+
+                {task.text} 
+                
+                <span onClick={() => removeTask(task.id)}>
+                    <ClearSharpIcon className={styles.delete__btn}/>
+                </span>
+
+            </li>
         ))}
+
         <form onSubmit={handleSubmit} className={styles.input__task}>
-            <input type="text" 
-            onChange={(e) => setTaskText(e.target.value)} 
-            value={taskText} 
+            <input 
+                type="text" 
+                onChange={(e) => setTaskText(e.target.value)} 
+                value={taskText} 
+                placeholder="Qual sua tarefa?"
+                autoComplete="off"
+                required
             />
-            <input type="submit" value="Salvar Tarefa" className={styles.btn__input} />
+
+            <button
+                type="submit"
+                className={styles.btn__input}
+            >
+                    <AddSharpIcon/>
+            </button>
+           
         </form>
         
     </div>

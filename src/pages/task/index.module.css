@@ -1,9 +1,7 @@
-
-
 .container {
-    text-align: center;
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
     padding: 0 20px 0 20px;
 }
@@ -23,6 +21,8 @@
 
 .btn__input{
     background-color: #50E3A4;
+    border: none;
+    cursor: pointer;
     width: 90px;
     height: 90px;
     border-radius: 50%;   
@@ -30,4 +30,17 @@
     margin-right: auto;
     margin-top: 20px;
     align-items: center;
+}
+
+.btn__input:hover{
+    background-color: #40bd87;
+    color: rgb(87, 87, 87);
+    transition: 0.5s
+  }
+
+.delete__btn{
+    
+    justify-content: center;
+    display: flex;
+
 }
