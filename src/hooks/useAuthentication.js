@@ -25,6 +25,7 @@ import {
       }
     }
   
+    //register
     const createUser = async (data) => {
       checkIfIsCancelled();
   
@@ -62,6 +63,7 @@ import {
       setLoading(false);
     };
   
+  //logout  
     const logout = () => {
       checkIfIsCancelled();
   

@@ -9,16 +9,11 @@ import { useAuthValue } from "../context/AuthContext";
 const NavBar = () => {
 
   const {user} = useAuthValue();
+  const {logout} = useAuthentication();
 
   return (
     <nav className={styles.navbar}>
         <ul className={styles.links_list}>
-            <li>
-                <NavLink 
-                  to="/" 
-                  className={({isActive}) => (isActive ? styles.active : styles.no__active)}>Tarefas
-                </NavLink>
-            </li>
             {!user && (
                 <>
                     <li>
@@ -29,12 +24,27 @@ const NavBar = () => {
                     </li>
                 </>
             )}
+            {user && (
+                <>
+                <li>
+                    <NavLink to="/">Tarefas</NavLink>
+                </li>
+                <li>
+                    <NavLink to="/create">Nova Tarefa</NavLink>
+                </li>
+            </>
+            )}
             <li>
                 <NavLink 
                   to="/about" 
                   className={({isActive}) => (isActive ? styles.active : styles.no__active)}>Sobre
                 </NavLink>
             </li>
+            {user && (
+                <li>
+                    <button onClick={logout}>Sair</button>
+                </li>
+            )}
         </ul>
     </nav>
   );

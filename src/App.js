@@ -1,9 +1,10 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'; 
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom'; 
 import './App.css';
 
 //pages
 import Tasks from "./pages/task";
 import About from "./pages/about";
+import CreateTask from './pages/createTask';
 
 //components
 import NavBar from './components/NavBar';
@@ -16,7 +17,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 //hooks 
 import { useState, useEffect } from 'react';
 import { useAuthentication } from './hooks/useAuthentication';
-
+import Login from './pages/login';
 
 
 function App() {
@@ -44,10 +45,22 @@ function App() {
           <div className="container">
             <NavBar />
               <Routes>
-                <Route path="/" element={<Tasks />}/>
-
-                <Route path="/register" element={<Register />}/>
-
+                <Route 
+                  path="/" 
+                  element={user ? <Tasks /> : <Navigate to="/login" />}
+                />
+                <Route 
+                  path="/register" 
+                  element={!user ? <Register /> : <Navigate to="/" />}
+                />
+                <Route 
+                  path="/login" 
+                  element={!user ? <Login /> : <Navigate to="/" />}
+                />
+                <Route 
+                  path="/create" 
+                  element={user ? <CreateTask /> : <Navigate to="/login"/>}
+                />
                 <Route path="/about" element={<About />}/>
               </Routes>
             </div>
