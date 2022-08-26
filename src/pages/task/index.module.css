@@ -6,10 +6,20 @@
     padding: 0 20px 0 20px;
 }
 
+.list_item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: solid 1px rgb(238, 238, 238);
+}
 
-.title {
-    padding: 50px;
-    text-align: right;
+.delete__btn{
+  padding-top: 4px;
+}
+
+input{
+    text-align: center;
 }
 
 .input__task{
@@ -38,9 +48,3 @@
     transition: 0.5s
   }
 
-.delete__btn{
-    
-    justify-content: center;
-    display: flex;
-
-}

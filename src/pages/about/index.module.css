@@ -6,6 +6,10 @@
     padding: 0 20px 0 20px;
 }
 
+.about h1{
+    font-size: 1.5em;
+}
+
 .about p{
     color: #aaa;
     margin-bottom: 2em;

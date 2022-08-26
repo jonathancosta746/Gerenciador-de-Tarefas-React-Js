@@ -2,7 +2,13 @@ import { NavLink } from "react-router-dom";
 
 import styles from "./NavBar.module.css";
 
+import { useAuthentication } from "../hooks/useAuthentication";
+
+import { useAuthValue } from "../context/AuthContext";
+
 const NavBar = () => {
+
+  const {user} = useAuthValue();
 
   return (
     <nav className={styles.navbar}>
@@ -13,6 +19,16 @@ const NavBar = () => {
                   className={({isActive}) => (isActive ? styles.active : styles.no__active)}>Tarefas
                 </NavLink>
             </li>
+            {!user && (
+                <>
+                    <li>
+                        <NavLink to="/login">Entrar</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/register">Cadastrar</NavLink>
+                    </li>
+                </>
+            )}
             <li>
                 <NavLink 
                   to="/about" 

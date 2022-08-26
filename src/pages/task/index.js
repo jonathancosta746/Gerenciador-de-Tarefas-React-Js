@@ -8,8 +8,9 @@ import styles from "./index.module.css"
 import AddSharpIcon from '@mui/icons-material/AddSharp';
 import ClearSharpIcon from '@mui/icons-material/ClearSharp';
 
+
 const Tasks = () => {
-      const initialTasks = [""]
+    const initialTasks = [""]
 
     const taskReducer = (state, action) => {
         switch(action.type) {
@@ -49,8 +50,8 @@ const Tasks = () => {
     <div className={styles.container}>
         {tasks.map((task) => (
             <li 
-                key={task.id} 
-                onDoubleClick={() => removeTask(task.id)}
+                className={styles.list_item}
+                key={task.id}
             >
 
                 {task.text} 
