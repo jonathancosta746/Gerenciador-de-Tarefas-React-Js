@@ -2,12 +2,13 @@ import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import './App.css';
 
 //pages
-import Tasks from "./pages/task";
 import About from "./pages/about";
+import Register from './pages/register';
+import Login from './pages/login';
+import Dashboard from './pages/dashboard';
 
 //components
-import NavBar from './components/NavBar';
-import Register from './pages/register';
+import NavBar from './components/navBar/';
 
 //context
 import { AuthProvider } from './context/AuthContext';
@@ -16,7 +17,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 //hooks 
 import { useState, useEffect } from 'react';
 import { useAuthentication } from './hooks/useAuthentication';
-import Login from './pages/login';
+
 
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
               <Routes>
                 <Route 
                   path="/" 
-                  element={user ? <Tasks /> : <Navigate to="/login" />}
+                  element={user ? <Dashboard /> : <Navigate to="/login" />}
                 />
                 <Route 
                   path="/register" 

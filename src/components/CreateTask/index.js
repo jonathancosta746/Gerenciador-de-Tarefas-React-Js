@@ -2,14 +2,17 @@ import styles from "./index.module.css"
 
 
 import { useState } from "react";
+
+//hooks
 import { useInsertDocument } from "../../hooks/useInsertDocument";
 import { useAuthValue } from "../../context/AuthContext";
-
 
 //Material Design
 import AddSharpIcon from '@mui/icons-material/AddSharp';
 
+
 const CreateTask = () => {
+  //inserir tarefa
   const [title, setTitle] = useState("");
 
   const [formError, setFormError] = useState("");
