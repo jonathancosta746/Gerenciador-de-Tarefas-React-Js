@@ -1,0 +1,11 @@
+.login {
+    text-align: center;
+}
+
+.login h1{
+    font-size: 1.5em;
+}
+
+.login p{
+    color: #aaa;
+}

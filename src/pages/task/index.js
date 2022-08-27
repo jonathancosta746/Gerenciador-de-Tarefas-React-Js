@@ -1,89 +1,76 @@
-import { useReducer, useState } from "react"
-
-
-//css
 import styles from "./index.module.css"
+
+
+import { useState } from "react";
+import { useInsertDocument } from "../../hooks/useInsertDocument";
+import { useAuthValue } from "../../context/AuthContext";
+
 
 //Material Design
 import AddSharpIcon from '@mui/icons-material/AddSharp';
-import ClearSharpIcon from '@mui/icons-material/ClearSharp';
 
+const CreateTask = () => {
+  const [title, setTitle] = useState("");
 
-const Tasks = () => {
-    const initialTasks = [""]
+  const [formError, setFormError] = useState("");
 
-    const taskReducer = (state, action) => {
-        switch(action.type) {
-            case "ADD":
-                const newTask = {
-                    id: Math.random(),
-                    text: taskText
-                };
+  const { user } = useAuthValue();
 
-                setTaskText("")
+  const { insertDocument, response } = useInsertDocument("tasks");
 
-                return [...state, newTask];
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormError("");
 
-            case "DELETE":
-                return state.filter((task) => task.id !== action.id);
-            
-            default:
-                return state;
-        }
-    };
-
-    const [taskText, setTaskText] = useState("");
-    const [tasks, dispatchTasks] = useReducer(taskReducer, initialTasks)
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-
-        dispatchTasks({type: "ADD" });
-    };
-
-    const removeTask = (id) => {
-        dispatchTasks({type: "DELETE", id});
+    // check values
+    if (!title) {
+      setFormError("Por favor, preencha todos os campos!");
     }
 
 
+    if(formError) return
+
+    insertDocument({
+      title,
+      uid: user.uid,
+      createdBy: user.displayName,
+    });
+
+  };
+
   return (
     <div className={styles.container}>
-        {tasks.map((task) => (
-            <li 
-                className={styles.list_item}
-                key={task.id}
-            >
-
-                {task.text} 
-                
-                <span onClick={() => removeTask(task.id)}>
-                    <ClearSharpIcon className={styles.delete__btn}/>
-                </span>
-
-            </li>
-        ))}
-
-        <form onSubmit={handleSubmit} className={styles.input__task}>
-            <input 
-                type="text" 
-                onChange={(e) => setTaskText(e.target.value)} 
-                value={taskText} 
-                placeholder="Qual sua tarefa?"
-                autoComplete="off"
-                required
-            />
-
-            <button
-                type="submit"
-                className={styles.btn__input}
-            >
-                    <AddSharpIcon/>
-            </button>
-           
-        </form>
-        
+      <form onSubmit={handleSubmit} className={styles.input__task}>
+        <label>
+          <input 
+            type="text" 
+            name="title" 
+            required 
+            placeholder="Qual sua tarefa?"
+            autoComplete="off"
+            onChange={(e) => setTitle(e.target.value)}
+            value={title}
+          />
+        </label>      
+    
+        {!response.loading && 
+          <button
+            type="submit"
+            className={styles.btn__input}
+          >
+            <AddSharpIcon/>
+          </button>}
+        {response.loading && (
+          
+          <button className="btn" disabled>
+            Aguarde...
+          </button>
+        )}
+        {response.error && <p className="error">{response.error}</p>}
+        {formError && <p className="error">{formError}</p>}
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default Tasks
+export default CreateTask

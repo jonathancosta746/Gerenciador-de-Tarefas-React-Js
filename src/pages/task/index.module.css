@@ -14,10 +14,6 @@
     border-bottom: solid 1px rgb(238, 238, 238);
 }
 
-.delete__btn{
-  padding-top: 4px;
-}
-
 input{
     text-align: center;
 }
@@ -46,5 +42,4 @@ input{
     background-color: #40bd87;
     color: rgb(87, 87, 87);
     transition: 0.5s
-  }
-
+}

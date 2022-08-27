@@ -29,9 +29,7 @@ const NavBar = () => {
                 <li>
                     <NavLink to="/">Tarefas</NavLink>
                 </li>
-                <li>
-                    <NavLink to="/create">Nova Tarefa</NavLink>
-                </li>
+               
             </>
             )}
             <li>

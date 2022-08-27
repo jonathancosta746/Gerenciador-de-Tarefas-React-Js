@@ -4,7 +4,6 @@ import './App.css';
 //pages
 import Tasks from "./pages/task";
 import About from "./pages/about";
-import CreateTask from './pages/createTask';
 
 //components
 import NavBar from './components/NavBar';
@@ -57,10 +56,7 @@ function App() {
                   path="/login" 
                   element={!user ? <Login /> : <Navigate to="/" />}
                 />
-                <Route 
-                  path="/create" 
-                  element={user ? <CreateTask /> : <Navigate to="/login"/>}
-                />
+                
                 <Route path="/about" element={<About />}/>
               </Routes>
             </div>
