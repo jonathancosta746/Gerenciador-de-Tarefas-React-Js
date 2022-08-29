@@ -1,7 +1,6 @@
 import styles from "./index.module.css"
 
 import {useState, useEffect} from 'react';
-
 import { useAuthentication } from "../../hooks/useAuthentication";
 
 const Login = () => {

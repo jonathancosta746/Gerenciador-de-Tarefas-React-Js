@@ -33,7 +33,7 @@ import {
         const { user } = await createUserWithEmailAndPassword(
           auth,
           data.email,
-          data.password
+          data.password,
         );
   
         await updateProfile(user, {
@@ -96,8 +96,6 @@ import {
         setError(systemErrorMessage);
       }
   
-      console.log(error);
-  
       setLoading(false);
     };
   
@@ -111,6 +109,6 @@ import {
       error,
       logout,
       login,
-      loading,
+      loading
     };
   };
