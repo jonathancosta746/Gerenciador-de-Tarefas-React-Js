@@ -11,14 +11,16 @@ import ClearSharpIcon from '@mui/icons-material/ClearSharp';
 
 const Tasks = () => {
   const { user } = useAuthValue();
-  const uid = user.uid;
+  const uid = user.uid
+  const completeUser = user.displayName
+  const firstNameUser = completeUser.split(' ')[0];// separar str por espaços
+
+
+  console.log(firstNameUser)
 
   const { documents: tasks} = useFetchDocuments("tasks", null, uid);
 
   const {deleteDocument} = useDeleteDocument("tasks");
-
-  console.log(tasks)
-
 
 
   return (
@@ -29,7 +31,7 @@ const Tasks = () => {
           <p>Salve suas tarefas</p>
         </div>
       ) : (
-        <p>Estas são suas tarefas</p>
+        <p>Olá {firstNameUser}. Estas são suas tarefas</p>
       )}
 
       {tasks &&
