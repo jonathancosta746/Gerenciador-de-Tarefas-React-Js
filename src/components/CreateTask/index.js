@@ -24,6 +24,8 @@ const CreateTask = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setFormError("");
+    setTitle(""); //apagar letra apos utilizada
+
 
     // check values
     if (!title) {
