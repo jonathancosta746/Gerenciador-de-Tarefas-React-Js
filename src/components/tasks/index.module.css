@@ -19,13 +19,9 @@
   .notask {
     text-align: center;
   }
-  
-  .notask p {
-    margin-bottom: 1.5em;
-  }
-  
-  .notask a {
-    padding: 10px 25px;
+
+  .dashboard span{
+    font-weight: bold;
   }
   
   .task_header {

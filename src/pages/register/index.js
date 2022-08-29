@@ -44,9 +44,6 @@ const Register = () => {
     }, [authError]);
 
 
-
-
-
   return (
     <div className={styles.register} >
         <h1>Cadastre-se</h1>
