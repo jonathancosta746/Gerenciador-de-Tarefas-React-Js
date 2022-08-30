@@ -12,3 +12,12 @@ body {
   box-shadow: rgb(211, 210, 210) 10px 10px 50px;
   list-style: none;
 }
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 800px){  
+  .container{
+    width: 395px;
+    height: 80vh;
+  }
+}

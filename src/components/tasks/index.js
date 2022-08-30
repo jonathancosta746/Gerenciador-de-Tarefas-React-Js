@@ -30,20 +30,22 @@ const Tasks = () => {
         <p>Olá <span>{userName}</span>. Estas são suas tarefas</p>
       )}
 
-      {tasks &&
-        tasks.map((task) => (
-          <div className={styles.task_row} key={task.id}>
-            <p>{task.title}</p>
-            <div className={styles.actions}>
-              <button
-                onClick={() => deleteDocument(task.id)}
-                className={styles.btn__delete}
-              >
-                <ClearSharpIcon />
-              </button>
+        <div className={styles.taks__area}>
+          {tasks &&
+          tasks.map((task) => (
+            <div className={styles.task_row} key={task.id}>
+              <p>{task.title}</p>
+              <div className={styles.actions}>
+                <button
+                  onClick={() => deleteDocument(task.id)}
+                  className={styles.btn__delete}
+                >
+                  <ClearSharpIcon />
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
     </div>
   );
 };
