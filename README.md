@@ -2,7 +2,7 @@
 
 
 ## Como visualizar o projeto?
-Disponível do link 
+Disponível do link https://gerenciadortarefas-react-js.netlify.app/login
 
 ou
 
