@@ -32,7 +32,6 @@ const CreateTask = () => {
       setFormError("Por favor, preencha todos os campos!");
     }
 
-
     if(formError) return
 
     insertDocument({
@@ -44,9 +43,8 @@ const CreateTask = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.create_task}>
       <form onSubmit={handleSubmit} className={styles.input__task}>
-        <label>
           <input 
             type="text" 
             name="title" 
@@ -56,23 +54,25 @@ const CreateTask = () => {
             onChange={(e) => setTitle(e.target.value)}
             value={title}
           />
-        </label>      
-    
+      
+      <div>
         {!response.loading && 
+        
           <button
             type="submit"
             className={styles.btn__input}
           >
             <AddSharpIcon/>
           </button>}
+
         {response.loading && (
-          
           <button className="btn" disabled>
             Aguarde...
           </button>
         )}
         {response.error && <p className="error">{response.error}</p>}
         {formError && <p className="error">{formError}</p>}
+      </div>
       </form>
     </div>
   );

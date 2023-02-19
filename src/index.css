@@ -1,19 +1,8 @@
 body {
-    background-color: #F0EFE9;
+    background-color: #FBFBFD;
     padding: 0;
     margin: 0;
     font-family: "Montserrat", sans-serif;
-}
-
-input::placeholder,
-textarea::placeholder{
-  font-family: "Montserrat", sans-serif;;
-  color: #aaa;
-}
-
-input:focus,
-textarea{
-  outline: none;
 }
 
 a,
@@ -31,34 +20,6 @@ nav button{
 a:hover,
 nav button:hover{
   color: #bbb;
-}
-
-/*Form styles*/
-
-form {
-  max-width: 40%;
-  margin: 0 auto;
-}
-
-label {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1em;
-}
-
-label span{
-  margin-bottom: .3em;
-  font-weight: bold;
-  text-align: left;
-}
-
-input,
-textarea{
-  box-sizing: border-box;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  padding: .8em 0;
-  background-color: transparent;
 }
 
 .btn{
@@ -84,3 +45,67 @@ button[disabled]{
   background-color: #AAA;
 }
 
+/*Form styles*/
+form {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
+}
+
+label span{
+  margin-bottom: .3em;
+  font-weight: bold;
+  text-align: left;
+}
+
+input,
+textarea{
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: .5rem;
+  padding: .8em 0;
+  background-color: transparent;
+}
+
+input::placeholder,
+textarea::placeholder{
+  font-family: "Montserrat", sans-serif;;
+  color: #aaa;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+input:focus,
+textarea{
+  outline: none;
+}
+
+
+/*=============== BREAKPOINTS ===============*/
+/* For hd devices */
+@media screen and (min-width: 1200px) {
+  /*Form styles*/
+  input::placeholder,
+  textarea::placeholder{
+  font-size: 1rem;
+}
+
+  label {
+    width: 15rem;
+  }
+
+  input,
+  textarea{
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: .5rem;
+    padding: .7rem 0;
+  }
+}

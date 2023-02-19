@@ -3,6 +3,8 @@ import styles from "./index.module.css"
 import {useState, useEffect} from 'react';
 import { useAuthentication } from "../../hooks/useAuthentication";
 
+import logo from "../../images/logo.png"
+
 const Login = () => {
 
   const [email, setEmail] = useState("");
@@ -38,27 +40,25 @@ const Login = () => {
 
   return (
     <div className={styles.login}>
-        <h1>Entrar</h1>
-        <p>Faça o login para poder utilizar o sistema</p>
+        <img src={logo} alt="To-do List" />
+        <h1>Iniciar sessão com seu e-mail</h1>
         <form onSubmit={handleSubmit}>
           <label>
-            <span>E-mail:</span>
             <input 
               type="email" 
               name="email" 
               required 
-              placeholder="E-mail do usuário"
+              placeholder="E-mail"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               />
           </label>
           <label>
-            <span>Senha:</span>
             <input 
               type="password" 
               name="password" 
               required 
-              placeholder="Insira sua senha" 
+              placeholder="Senha" 
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               />

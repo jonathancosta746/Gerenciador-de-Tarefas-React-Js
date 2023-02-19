@@ -6,18 +6,32 @@ body {
 
 .container {
   background-color: white;
-  width: 450px;
-  height: 80vh;
-  border-radius: 5px;
+  width: 100vw;
+  height: 35rem;
   box-shadow: rgb(211, 210, 210) 10px 10px 50px;
-  list-style: none;
+  
 }
 
 /*=============== BREAKPOINTS ===============*/
-/* For small devices */
-@media screen and (max-width: 800px){  
-  .container{
-    width: 395px;
-    height: 80vh;
+/*For Tablets*/
+@media screen and (min-width: 600px) {
+  .container {
+    width: 85vw;
+    border-radius: 2rem;
   }
+}
+/* For hd devices */
+@media screen and (min-width: 1250px) {
+  .container {
+    width: 50vw;
+    height: 30rem;
+  }
+}
+  
+  /* For full hd devices */
+  @media screen and (min-width: 1900px) {
+    .container {
+      width: 35vw;
+      height: 40rem;
+    }
 }

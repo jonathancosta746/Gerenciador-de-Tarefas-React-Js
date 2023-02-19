@@ -1,27 +1,27 @@
-.container {
+.create_task {
+    position: fixed;
+    right: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0 20px 0 20px;
+    top: 32rem;
 }
 
 .list_item{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     padding: 5px;
     border-bottom: solid 1px rgb(238, 238, 238);
 }
 
-input{
+.create_task input{
     text-align: center;
-}
-
-.input__task{
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    bottom: 10vh;
+    width: 20rem;
+    height: 2rem;
+    margin-bottom: 1rem;
 }
 
 .btn__input{
@@ -41,3 +41,36 @@ input{
     color: rgb(87, 87, 87);
     transition: 0.5s
 }
+
+/*=============== BREAKPOINTS ===============*/
+/*For Tablets*/
+@media screen and (min-width: 600px) {
+    .create_task {
+        top: 32rem;
+    }
+
+    .create_task input{
+        width: 30rem;
+    }
+}
+/* For hd devices */
+@media screen and (min-width: 1200px) {
+    .create_task {
+        top: 27rem;
+    }
+
+    .create_task input{
+        width: 30rem;
+    }
+}
+    
+/* For full hd devices */
+@media screen and (min-width: 1900px) {
+    .create_task {
+        top: 37rem;
+    }
+
+    .create_task input{
+        width: 35rem;
+    }
+  }

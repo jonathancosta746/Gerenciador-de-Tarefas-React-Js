@@ -7,7 +7,8 @@
 }
 
 .about h1{
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
 .about p{
@@ -20,4 +21,17 @@
     margin-top: 15px;
     padding: 10px 15px;
     padding: 10px 15px;
+}
+
+img {
+    width: 10rem;  
+    padding-bottom: 1rem;
+  }
+
+
+  /* For tablet devices */
+@media screen and (min-width: 600px) {
+    .about p{
+        padding: 0 5rem;
+    }
 }

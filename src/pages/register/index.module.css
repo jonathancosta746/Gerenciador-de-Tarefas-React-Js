@@ -7,9 +7,72 @@
 }
 
 .register h1{
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    font-weight: 300;
 }
 
-.register p{
-    color:#aaa;
+img {
+    width: 5rem;  
+    padding-bottom: 1rem;
 }
+
+/*=============== BREAKPOINTS ===============*/
+/*For Tablets*/
+@media screen and (min-width: 600px) {
+    img {
+        width: 10rem; 
+    }
+
+    .register h1{
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+
+    .register > form {       
+        display: grid;
+        grid-template-areas:    "nome email"
+                                "password confirmparssword"
+                                "button button" ;   
+        align-items: center;  
+    }
+
+    .nome{
+        grid-area: nome;
+        margin: .5rem .5rem;
+    }
+
+    .email {
+        grid-area: email;
+        margin: .5rem .5rem;
+    }
+
+    .password{
+        grid-area: password;
+        margin: .5rem .5rem;
+    }
+
+    .confirm_password{
+        grid-area: confirmparssword;
+        margin: .5rem .5rem;
+    }
+
+    .btn{
+        grid-area: button;
+        margin-top: 1rem;
+    }
+
+}
+/* For hd devices */
+@media screen and (min-width: 1200px) {
+    img {
+        width: 8rem;  
+        padding-bottom: 1rem;
+    }
+}
+    
+/* For full hd devices */
+@media screen and (min-width: 1900px) {
+    img {
+        width: 12rem; 
+    }
+  }
